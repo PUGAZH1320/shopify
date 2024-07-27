@@ -42,9 +42,9 @@ const ThirdPage = () => {
           <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
             <Grid
               container
-              xs={6}
-              sm={6}
-              md={6}
+              xs={12}
+              sm={12}
+              md={12}
               lg={6}
               xl={6}
               sx={{
@@ -55,22 +55,70 @@ const ThirdPage = () => {
                 p: 2,
               }}
             >
-              <Typography sx={{ fontSize: "12px", textTransform: "uppercase" }}>
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  p: {
+                    xs: "20px 0px 20px 0px",
+                    sm: "20px 0px 20px 0px",
+                    md: "20px 0px 20px 0px",
+                    lg: "0px 0px 0px 0px",
+                    xl: "0px 0px 0px 0px",
+                  },
+                  textTransform: "uppercase",
+                }}
+              >
                 wellness & Spa services
               </Typography>
-              <Typography sx={{ fontSize: "40px", textTransform: "uppercase" }}>
+              <Typography
+                sx={{
+                  lineHeight: {
+                    xs: "40px",
+                    sm: "40px",
+                    md: "40px",
+                    lg: "60px",
+                    xl: "60px",
+                  },
+                  fontSize: "40px",
+                  textTransform: "uppercase",
+                }}
+              >
                 Take wellness & recovery
               </Typography>
               <Typography
                 sx={{
-                  lineHeight: "10px",
+                  lineHeight: {
+                    xs: "40px",
+                    sm: "40px",
+                    md: "40px",
+                    lg: "10px",
+                    xl: "10px",
+                  },
                   fontSize: "40px",
                   textTransform: "uppercase",
                 }}
               >
                 to a whole new level
               </Typography>
-              <Typography sx={{ lineHeight: "60px", fontSize: "12px" }}>
+              <Typography
+                sx={{
+                  lineHeight: {
+                    xs: "20px",
+                    sm: "20px",
+                    md: "20px",
+                    lg: "60px",
+                    xl: "60px",
+                  },
+                  fontSize: "12px",
+                  p: {
+                    xs: "20px 0px 20px 0px",
+                    sm: "20px 0px 20px 0px",
+                    md: "20px 0px 20px 0px",
+                    lg: "0px 0px 0px 0px",
+                    xl: "0px 0px 0px 0px",
+                  },
+                }}
+              >
                 Full-service premium amenities. Just bring you, and we do the
                 rest!
               </Typography>
@@ -82,7 +130,7 @@ const ThirdPage = () => {
                     borderRadius: "0px",
                     borderColor: "white",
                     fontSize: "12px",
-                    mx: 1,
+                    // mx: 1,
                     backgroundColor: "white",
                   }}
                 >
@@ -92,9 +140,9 @@ const ThirdPage = () => {
             </Grid>
             <Grid
               container
-              xs={6}
-              sm={6}
-              md={6}
+              xs={12}
+              sm={12}
+              md={12}
               lg={6}
               xl={6}
               sx={{
@@ -102,7 +150,13 @@ const ThirdPage = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "flex-end",
-                p: 4,
+                p: {
+                  xs: 0,
+                  sm: 0,
+                  md: 0,
+                  lg: 4,
+                  xl: 4,
+                },
               }}
             >
               <Grid
@@ -169,7 +223,7 @@ const ThirdPage = () => {
                   //   justifyContent: "center",
                   alignItems: "left",
                   flexDirection: "column",
-                  p: "0px 0px 0px 20px",
+                  p: "0px 20px 0px 20px",
                 }}
               >
                 <Grid
@@ -223,7 +277,7 @@ const ThirdPage = () => {
                   //   justifyContent: "center",
                   alignItems: "left",
                   //   flexDirection: "column",
-                  p: "0px 0px 0px 20px",
+                  p: "0px 20px 0px 20px",
                 }}
               >
                 <Grid
@@ -279,7 +333,7 @@ const ThirdPage = () => {
                   //   justifyContent: "center",
                   alignItems: "left",
                   //   flexDirection: "column",
-                  p: "0px 0px 0px 20px",
+                  p: "0px 20px 0px 20px",
                   "&:hover": {
                     backgroundImage: `url(${frame})`,
                     color: "black",
@@ -330,7 +384,7 @@ const ThirdPage = () => {
                   //   justifyContent: "center",
                   alignItems: "left",
                   //   flexDirection: "column",
-                  p: "0px 0px 0px 20px",
+                  p: "0px 20px 0px 20px",
                   "&:hover": {
                     backgroundImage: `url(${frame})`,
                     color: "black",
@@ -362,7 +416,13 @@ const ThirdPage = () => {
                   lg={6}
                   xl={6}
                   sx={{
-                    p: "10px 0px 10px 0px",
+                    p: {
+                      xs: "0px",
+                      sm: "0px",
+                      md: "0px",
+                      lg: "10px 0px 10px 0px",
+                      xl: "10px 0px 10px 0px",
+                    },
                     display: "flex",
                     justifyContent: "flex-end",
                   }}

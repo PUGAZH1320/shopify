@@ -1,4 +1,4 @@
-import { Paper, Grid, Typography, Button } from "@mui/material";
+import { Paper, Grid, Typography, Button, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 import home2 from "../assets/home2.png";
 import homeHover1 from "../assets/homeHover1.png";
@@ -7,7 +7,7 @@ import frame from "../assets/frame.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
-
+import "../App.css";
 const theme = createTheme({
   typography: {
     fontFamily: "ABeeZee, Arial",
@@ -16,6 +16,8 @@ const theme = createTheme({
 
 const SecondPage = () => {
   const [hovered, setHovered] = useState(0);
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "lg"));
 
   let backgroundImage;
   if (hovered === 3) {
@@ -55,9 +57,9 @@ const SecondPage = () => {
           <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
             <Grid
               container
-              xs={6}
-              sm={6}
-              md={6}
+              xs={12}
+              sm={12}
+              md={12}
               lg={6}
               xl={6}
               sx={{
@@ -68,23 +70,73 @@ const SecondPage = () => {
                 p: 2,
               }}
             >
-              <Typography sx={{ fontSize: "12px" }}>
+              <Typography
+                sx={{
+                  fontSize: "12px",
+                  p: {
+                    xs: "20px 0px 20px 0px",
+                    sm: "20px 0px 20px 0px",
+                    md: "20px 0px 20px 0px",
+                    lg: "0px 0px 0px 0px",
+                    xl: "0px 0px 0px 0px",
+                  },
+                }}
+              >
                 FITNESS & WORKOUT
-              </Typography>
-              <Typography sx={{ fontSize: "40px", textTransform: "uppercase" }}>
-                over 200 all inclusive
               </Typography>
               <Typography
                 sx={{
-                  lineHeight: "10px",
+                  lineHeight: {
+                    xs: "40px",
+                    sm: "40px",
+                    md: "40px",
+                    lg: "60px",
+                    xl: "60px",
+                  },
+                  fontSize: "40px",
+                  textTransform: "uppercase",
+                }}
+              >
+                over 200 {(isMobile || isTablet) && <br />}all inclusive
+              </Typography>
+
+              <Typography
+                sx={{
+                  lineHeight: {
+                    xs: "40px",
+                    sm: "40px",
+                    md: "40px",
+                    lg: "10px",
+                    xl: "10px",
+                  },
                   fontSize: "40px",
                   textTransform: "uppercase",
                 }}
               >
                 classes weekly
               </Typography>
-              <Typography sx={{ lineHeight: "60px", fontSize: "12px" }}>
-                Full-service premium amenities. Just bring you, and we do the
+              <Typography
+                sx={{
+                  lineHeight: {
+                    xs: "20px",
+                    sm: "20px",
+                    md: "20px",
+                    lg: "60px",
+                    xl: "60px",
+                  },
+                  fontSize: "12px",
+                  fontFamily: "Sailec, sans-serif",
+                  p: {
+                    xs: "20px 0px 20px 0px",
+                    sm: "20px 0px 20px 0px",
+                    md: "20px 0px 20px 0px",
+                    lg: "0px 0px 0px 0px",
+                    xl: "0px 0px 0px 0px",
+                  },
+                }}
+              >
+                Full-service premium amenities.
+                {(isMobile || isTablet) && <br />} Just bring you, and we do the
                 rest!
               </Typography>
               <Grid>
@@ -95,7 +147,6 @@ const SecondPage = () => {
                     borderRadius: "0px",
                     borderColor: "white",
                     fontSize: "12px",
-                    mx: 1,
                     backgroundColor: "white",
                   }}
                 >
@@ -103,148 +154,397 @@ const SecondPage = () => {
                 </Button>
               </Grid>
             </Grid>
-            <Grid
-              container
-              xs={6}
-              sm={6}
-              md={6}
-              lg={6}
-              xl={6}
-              sx={{
-                color: "white",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Grid
-                item
-                sx={{
-                  minHeight: "33.33%",
-                  borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
-                  display: "flex",
-                  //   justifyContent: "center",
-                  alignItems: "left",
-                  flexDirection: "column",
-                  p: "60px 0px 0px 20px",
-                  "&:hover": {
-                    backgroundImage: `url(${frame})`,
-                    color: "black",
-                  },
-                }}
-                onMouseEnter={() => setHovered(1)}
-                onMouseLeave={() => setHovered(0)}
-              >
-                <Grid sx={{ p: "0px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "24px" }}>FYOGA</Typography>
-                </Grid>
-                <Grid sx={{ p: "20px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "16px" }}>
-                    Find your breath, flow, and turn up the heat!
-                  </Typography>
-                </Grid>
-                <Grid sx={{ p: "30px 0px 0px 0px" }}>
-                  <Button
-                    variant="text"
-                    endIcon={<EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />}
+            {isMobile || isTablet ? (
+              <>
+                <Grid
+                  container
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  sx={{
+                    color: "white",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    
+                  }}
+                >
+                  <Grid
+                    item
                     sx={{
-                      color: hovered === 1 ? "black" : "white",
-                      borderRadius: "0px",
-                      borderColor: "white",
-                      fontSize: "12px",
-                      p: "0px 0px 0px 0px",
+                      minHeight: "2%",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      
+                      alignItems: "left",
+                   
+                      p: "0px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
                     }}
                   >
-                    join us
-                  </Button>
-                </Grid>
-              </Grid>
-              <Grid
-                item
-                sx={{
-                  minHeight: "33.33%",
-                  borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
-                  display: "flex",
-                  //   justifyContent: "center",
-                  alignItems: "left",
-                  flexDirection: "column",
-                  p: "60px 0px 0px 20px",
-                  "&:hover": {
-                    backgroundImage: `url(${frame})`,
-                    color: "black",
-                  },
-                }}
-                onMouseEnter={() => setHovered(2)}
-                onMouseLeave={() => setHovered(0)}
-              >
-                <Grid sx={{ p: "0px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "24px" }}>HIIT</Typography>
-                </Grid>
-                <Grid sx={{ p: "20px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "16px" }}>
-                    HIIT hard while having the time of your life.{" "}
-                  </Typography>
-                </Grid>
-                <Grid sx={{ p: "30px 0px 0px 0px" }}>
-                  <Button
-                    variant="text"
-                    endIcon={<EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />}
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: "10px 0px 10px 0px",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                      }}
+                    >
+                      <Typography
+                        sx={{ fontSize: "12px", textTransform: "uppercase" }}
+                      >
+                       YOGA{" "}
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: {
+                          xs: "0px",
+                          sm: "0px",
+                          md: "0px",
+                          lg:"10px 0px 10px 0px",
+                          xl: "10px 0px 10px 0px",
+                        },
+                        display: "flex",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: "white",
+                          borderRadius: "0px",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        
+                      </Button>
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    item
                     sx={{
-                      color: hovered === 2 ? "black" : "white",
-                      borderRadius: "0px",
-                      borderColor: "white",
-                      fontSize: "12px",
-                      p: "0px 0px 0px 0px",
+                      minHeight: "2%",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      //   justifyContent: "center",
+                      alignItems: "left",
+                      //   flexDirection: "column",
+                      p: "0px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
                     }}
                   >
-                    join us
-                  </Button>
-                </Grid>
-              </Grid>
-              <Grid
-                item
-                sx={{
-                  minHeight: "33.33%",
-                  borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
-                  display: "flex",
-                  //   justifyContent: "center",
-                  alignItems: "left",
-                  flexDirection: "column",
-                  p: "60px 0px 0px 20px",
-                  "&:hover": {
-                    backgroundImage: `url(${frame})`,
-                    color: "black",
-                  },
-                }}
-                onMouseEnter={() => setHovered(3)}
-                onMouseLeave={() => setHovered(0)}
-              >
-                <Grid sx={{ p: "0px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "24px" }}>RIDE</Typography>
-                </Grid>
-                <Grid sx={{ p: "20px 0px 0px 0px" }}>
-                  <Typography sx={{ fontSize: "16px" }}>
-                    Race past your goals and get lost in the beat.{" "}
-                  </Typography>
-                </Grid>
-                <Grid sx={{ p: "30px 0px 0px 0px" }}>
-                  <Button
-                    variant="text"
-                    endIcon={<EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />}
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: "10px 0px 10px 0px",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                      }}
+                    >
+                      <Typography
+                        sx={{ fontSize: "12px", textTransform: "uppercase" }}
+                      >
+                       HIIT{" "}
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: {
+                          xs: "0px",
+                          sm: "0px",
+                          md: "0px",
+                          lg:"10px 0px 10px 0px",
+                          xl: "10px 0px 10px 0px",
+                        },
+                        display: "flex",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: "white",
+                          borderRadius: "0px",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        
+                      </Button>
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    item
                     sx={{
-                      color: hovered === 3 ? "black" : "white",
-                      borderRadius: "0px",
-                      fontSize: "12px",
-                      p: "0px 0px 0px 0px",
+                      minHeight: "2%",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      //   justifyContent: "center",
+                      alignItems: "left",
+                      //   flexDirection: "column",
+                      p: "0px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
                     }}
                   >
-                    join us
-                  </Button>
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: "10px 0px 10px 0px",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                      }}
+                    >
+                      <Typography
+                        sx={{ fontSize: "12px", textTransform: "uppercase" }}
+                      >
+                       RIDE{" "}
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      sx={{
+                        p: {
+                          xs: "0px",
+                          sm: "0px",
+                          md: "0px",
+                          lg:"10px 0px 10px 0px",
+                          xl: "10px 0px 10px 0px",
+                        },
+                        display: "flex",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: "white",
+                          borderRadius: "0px",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        
+                      </Button>
+                    </Grid>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Grid>
+              </>
+            ) : (
+              <>
+                <Grid
+                  container
+                  xs={6}
+                  sm={6}
+                  md={6}
+                  lg={6}
+                  xl={6}
+                  sx={{
+                    color: "white",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Grid
+                    item
+                    sx={{
+                      minHeight: "33.33%",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      //   justifyContent: "center",
+                      alignItems: "left",
+                      flexDirection: "column",
+                      p: "60px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
+                    }}
+                    onMouseEnter={() => setHovered(1)}
+                    onMouseLeave={() => setHovered(0)}
+                  >
+                    <Grid sx={{ p: "0px 0px 0px 0px" }}>
+                      <Typography sx={{ fontSize: "24px" }}>YOGA</Typography>
+                    </Grid>
+                    <Grid sx={{ p: "20px 0px 0px 0px" }}>
+                      <Typography
+                        sx={{
+                          fontSize: "16px",
+                          fontFamily: "Sailec, sans-serif",
+                        }}
+                      >
+                        Find your breath, flow, and turn up the heat!
+                      </Typography>
+                    </Grid>
+                    <Grid sx={{ p: "30px 0px 0px 0px" }}>
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: hovered === 1 ? "black" : "white",
+                          borderRadius: "0px",
+                          borderColor: "white",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        join us
+                      </Button>
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    item
+                    sx={{
+                      minHeight: "33.33%",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      //   justifyContent: "center",
+                      alignItems: "left",
+                      flexDirection: "column",
+                      p: "60px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
+                    }}
+                    onMouseEnter={() => setHovered(2)}
+                    onMouseLeave={() => setHovered(0)}
+                  >
+                    <Grid sx={{ p: "0px 0px 0px 0px" }}>
+                      <Typography sx={{ fontSize: "24px" }}>HIIT</Typography>
+                    </Grid>
+                    <Grid sx={{ p: "20px 0px 0px 0px" }}>
+                      <Typography
+                        sx={{
+                          fontSize: "16px",
+                          fontFamily: "Sailec, sans-serif",
+                        }}
+                      >
+                        HIIT hard while having the time of your life.{" "}
+                      </Typography>
+                    </Grid>
+                    <Grid sx={{ p: "30px 0px 0px 0px" }}>
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: hovered === 2 ? "black" : "white",
+                          borderRadius: "0px",
+                          borderColor: "white",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        join us
+                      </Button>
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    item
+                    sx={{
+                      minHeight: "33.33%",
+                      borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                      display: "flex",
+                      //   justifyContent: "center",
+                      alignItems: "left",
+                      flexDirection: "column",
+                      p: "60px 0px 0px 20px",
+                      "&:hover": {
+                        backgroundImage: `url(${frame})`,
+                        color: "black",
+                      },
+                    }}
+                    onMouseEnter={() => setHovered(3)}
+                    onMouseLeave={() => setHovered(0)}
+                  >
+                    <Grid sx={{ p: "0px 0px 0px 0px" }}>
+                      <Typography sx={{ fontSize: "24px" }}>RIDE</Typography>
+                    </Grid>
+                    <Grid sx={{ p: "20px 0px 0px 0px" }}>
+                      <Typography
+                        sx={{
+                          fontSize: "16px",
+                          fontFamily: "Sailec, sans-serif",
+                        }}
+                      >
+                        Race past your goals and get lost in the beat.{" "}
+                      </Typography>
+                    </Grid>
+                    <Grid sx={{ p: "30px 0px 0px 0px" }}>
+                      <Button
+                        variant="text"
+                        endIcon={
+                          <EastOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                        }
+                        sx={{
+                          color: hovered === 3 ? "black" : "white",
+                          borderRadius: "0px",
+                          fontSize: "12px",
+                          p: "0px 0px 0px 0px",
+                        }}
+                      >
+                        join us
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </>
+            )}
           </Grid>
         </Paper>
       </Grid>

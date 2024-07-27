@@ -1,7 +1,8 @@
-import { Paper, Button, Grid, Typography } from "@mui/material";
+import { Paper, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import home1 from "../assets/home1.png";
 import ham from "../assets/ham.png";
+import logo from "../assets/logo.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
@@ -13,6 +14,8 @@ const theme = createTheme({
 });
 
 const MainPage = () => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "lg"));
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -36,62 +39,102 @@ const MainPage = () => {
             borderRadius: "0px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
             p: 2,
           }}
         >
           <Grid container sx={{ color: "white", mb: 2 }}>
-            <Grid item xs={6} sx={{ display: "flex", alignItems: "center" }}>
+            <Grid item xs={2} sx={{ display: "flex", alignItems: "center" }}>
               <img src={ham} alt="ham" style={{ height: "20px" }} />
             </Grid>
             <Grid
               item
-              xs={6}
+              xs={10}
               sx={{
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: {
+                  xs: "center",
+                  sm: "center",
+                  md: "center",
+                  lg: "flex-end",
+                  xl: "flex-end",
+                },
                 alignItems: "center",
               }}
             >
-              <Button
-                variant="text"
-                startIcon={
-                  <PermIdentityOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
-                }
-                sx={{
-                  color: "white",
-                  borderRadius: "0px",
-                  borderColor: "white",
-                  fontSize: "12px",
-                  p: "0px 0px 0px 60px",
-                }}
-              >
-                log in
-              </Button>
-              <Button
-                variant="outlined"
-                sx={{
-                  color: "white",
-                  borderRadius: "0px",
-                  borderColor: "white",
-                  fontSize: "12px",
-                  mx: 1,
-                }}
-              >
-                book classes
-              </Button>
-              <Button
-                variant="contained"
-                sx={{
-                  color: "black",
-                  borderRadius: "0px",
-                  borderColor: "white",
-                  backgroundColor: "white",
-                  fontSize: "12px",
-                }}
-              >
-                buy classes
-              </Button>
+              {isMobile || isTablet ? (
+                <>
+                  <Grid
+                    container
+                    sx={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <Grid item sx={{ p: "0px 0px 0px 40px" }}>
+                      <img
+                        src={logo}
+                        alt="phonelogo"
+                        style={{
+                          padding: "0px 0px 0px 0px",
+                        }}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      sx={{
+                        justifyContent: {
+                          xs: "flex-end",
+                          sm: "flex-end",
+                          md: "flex-end",
+                          lg: "flex-end",
+                          xl: "flex-end",
+                        },
+                      }}
+                    >
+                      <PermIdentityOutlinedIcon sx={{ p: "0px 0px 0px 0px" }} />
+                    </Grid>
+                  </Grid>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="text"
+                    startIcon={
+                      <PermIdentityOutlinedIcon sx={{ p: "0px 0px 3px 0px" }} />
+                    }
+                    sx={{
+                      color: "white",
+                      borderRadius: "0px",
+                      borderColor: "white",
+                      fontSize: "12px",
+                      p: "0px 0px 0px 60px",
+                    }}
+                  >
+                    log in
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      color: "white",
+                      borderRadius: "0px",
+                      borderColor: "white",
+                      fontSize: "12px",
+                      mx: 1,
+                    }}
+                  >
+                    book classes
+                  </Button>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      color: "black",
+                      borderRadius: "0px",
+                      borderColor: "white",
+                      backgroundColor: "white",
+                      fontSize: "12px",
+                    }}
+                  >
+                    buy classes
+                  </Button>
+                </>
+              )}
             </Grid>
           </Grid>
           <Grid
@@ -99,7 +142,31 @@ const MainPage = () => {
             direction="column"
             justifyContent="center"
             alignItems="center"
-            sx={{ color: "white", mb: 2 }}
+            sx={{
+              color: "white",
+              mb: 2,
+              p: {
+                xs: "500px 0px 0px 0px",
+                sm: "500px 0px 0px 0px",
+                md: "500px 0px 0px 0px",
+                lg: "250px 0px 0px 0px",
+                xl: "250px 0px 0px 0px",
+              },
+              justifyContent: {
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "center",
+                xl: "center",
+              },
+              alignItems: {
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "center",
+                xl: "center",
+              },
+            }}
           >
             <Typography sx={{ lineHeight: "54px", fontSize: "40px" }}>
               S W E A T.
@@ -111,7 +178,25 @@ const MainPage = () => {
               C O N N E C T.
             </Typography>
           </Grid>
-          <Grid container justifyContent="center" alignItems="center">
+          <Grid
+            container
+            sx={{
+              justifyContent: {
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "center",
+                xl: "center",
+              },
+              alignItems: {
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "center",
+                xl: "center",
+              },
+            }}
+          >
             <Button
               variant="outlined"
               sx={{ color: "white", borderRadius: "0px", borderColor: "white" }}

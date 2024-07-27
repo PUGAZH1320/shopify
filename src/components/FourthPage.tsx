@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import home4 from "../assets/home4.png";
 import home5 from "../assets/home5.png";
 import CheckIcon from "@mui/icons-material/Check";
+import "../App.css";
 
 const theme = createTheme({
   typography: {
@@ -23,7 +24,7 @@ const FourthPage = () => {
         md={12}
         lg={12}
         xl={12}
-        sx={{ height: "150vh" }}
+        // sx={{ height: "150vh" }}
       >
         <Grid
           container
@@ -45,7 +46,7 @@ const FourthPage = () => {
           xl={12}
           sx={{ p: "0px 0px 70px 0px" }}
         >
-          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
             <Grid xs={12} sm={12} md={12} lg={12} xl={12}>
               <img
                 src={home4}
@@ -59,9 +60,9 @@ const FourthPage = () => {
             <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
               <Grid
                 item
-                xs={8}
-                sm={8}
-                md={8}
+                xs={12}
+                sm={12}
+                md={12}
                 lg={8}
                 xl={8}
                 sx={{
@@ -73,7 +74,13 @@ const FourthPage = () => {
                 <Typography sx={{ fontSize: "32px" }}>
                   YONGE / SHUTER
                 </Typography>
-                <Typography sx={{ fontSize: "16px", p: "10px 0px 0px 0px" }}>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    p: "10px 0px 0px 0px",
+                    fontFamily: "Sailec, sans-serif",
+                  }}
+                >
                   Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                   vulputate libero et velit interdum, ac aliquet odio mattis.
                 </Typography>
@@ -83,6 +90,7 @@ const FourthPage = () => {
                     color: "black",
                     opacity: 0.4,
                     p: "10px 0px 0px 0px",
+                    fontFamily: "Sailec, sans-serif",
                   }}
                 >
                   225 Yonge Street, Toronto ON M5B 1N8
@@ -93,6 +101,7 @@ const FourthPage = () => {
                     color: "black",
                     opacity: 0.4,
                     p: "0px 0px  40px 0px",
+                    fontFamily: "Sailec, sans-serif",
                   }}
                 >
                   647-372-0225{" "}
@@ -100,9 +109,9 @@ const FourthPage = () => {
               </Grid>
               <Grid
                 item
-                xs={4}
-                sm={4}
-                md={4}
+                xs={12}
+                sm={12}
+                md={12}
                 lg={4}
                 xl={4}
                 sx={{
@@ -119,70 +128,129 @@ const FourthPage = () => {
                 >
                   Exclusive services:
                 </Typography>
-                <Typography sx={{ fontSize: "14px", p: "20px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 1</Grid>
+                <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        p: {
+                          xs: "0px 0px 0px 20px",
+                          sm: "0px 0px 0px 20px",
+                          md: "0px 0px 0px 20px",
+                          lg: "20px 0px 0px 20px",
+                          xl: "20px 0px 0px 20px",
+                        },
+                      }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 1
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 2</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 2
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 3</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 3
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 4</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 4
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+          <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
             <Grid xs={12} sm={12} md={12} lg={12} xl={12}>
               <img
                 src={home5}
@@ -196,9 +264,9 @@ const FourthPage = () => {
             <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
               <Grid
                 item
-                xs={8}
-                sm={8}
-                md={8}
+                xs={12}
+                sm={12}
+                md={12}
                 lg={8}
                 xl={8}
                 sx={{
@@ -208,7 +276,13 @@ const FourthPage = () => {
                 }}
               >
                 <Typography sx={{ fontSize: "32px" }}>THE WALL</Typography>
-                <Typography sx={{ fontSize: "16px", p: "10px 0px 0px 0px" }}>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    p: "10px 0px 0px 0px",
+                    fontFamily: "Sailec, sans-serif",
+                  }}
+                >
                   Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                   vulputate libero et velit interdum, ac aliquet odio mattis.
                 </Typography>
@@ -218,6 +292,7 @@ const FourthPage = () => {
                     color: "black",
                     opacity: 0.4,
                     p: "10px 0px 0px 0px",
+                    fontFamily: "Sailec, sans-serif",
                   }}
                 >
                   486 Front St W, Toronto, ON M5V 0V2
@@ -228,6 +303,7 @@ const FourthPage = () => {
                     color: "black",
                     opacity: 0.4,
                     p: "0px 0px  40px 0px",
+                    fontFamily: "Sailec, sans-serif",
                   }}
                 >
                   647-372-0225{" "}
@@ -235,9 +311,9 @@ const FourthPage = () => {
               </Grid>
               <Grid
                 item
-                xs={4}
-                sm={4}
-                md={4}
+                xs={12}
+                sm={12}
+                md={12}
                 lg={4}
                 xl={4}
                 sx={{
@@ -254,66 +330,125 @@ const FourthPage = () => {
                 >
                   Exclusive services:
                 </Typography>
-                <Typography sx={{ fontSize: "14px", p: "20px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 1</Grid>
+                <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        p: {
+                          xs: "0px 0px 0px 20px",
+                          sm: "0px 0px 0px 20px",
+                          md: "0px 0px 0px 20px",
+                          lg: "20px 0px 0px 20px",
+                          xl: "20px 0px 0px 20px",
+                        },
+                      }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 1
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 2</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 2
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 3</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 3
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
-                <Typography sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}>
-                  <Grid
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ display: "flex" }}
-                  >
-                    <Grid style={{ padding: "0px 0px 0px 0px" }}>
-                      <CheckIcon sx={{ color: " #C79D5B", fontSize: "20px" }} />
-                    </Grid>
-                    <Grid>Service 4</Grid>
+                  <Grid item xs={4} sm={4} md={4} lg={12} xl={12}>
+                    <Typography
+                      sx={{ fontSize: "14px", p: "0px 0px 0px 20px" }}
+                    >
+                      <Grid
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={12}
+                        xl={12}
+                        sx={{ display: "flex" }}
+                      >
+                        <Grid style={{ padding: "0px 0px 0px 0px" }}>
+                          <CheckIcon
+                            sx={{ color: " #C79D5B", fontSize: "20px" }}
+                          />
+                        </Grid>
+                        <Grid
+                          sx={{
+                            fontFamily: "Sailec, sans-serif",
+                          }}
+                        >
+                          Service 4
+                        </Grid>
+                      </Grid>
+                    </Typography>
                   </Grid>
-                </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
