@@ -367,7 +367,15 @@ const FifthPage = () => {
           md={12}
           lg={12}
           xl={12}
-          sx={{ p: "40px 0px 0px 20px" }}
+          sx={{
+            p: {
+              xs: "40px 0px 0px 0px",
+              sm: "40px 0px 0px 0px",
+              md: "40px 0px 0px 0px",
+              lg: "40px 0px 0px 20px",
+              xl: "40px 0px 0px 20px",
+            },
+          }}
         >
           <Grid
             item
@@ -379,6 +387,13 @@ const FifthPage = () => {
             sx={{
               borderTop: "1px solid rgba(105, 105, 105, 0.5)",
               borderBottom: "1px solid rgba(105, 105, 105, 0.5)",
+              p: {
+                xs: "0px 0px 0px 20px",
+                sm: "0px 0px 0px 20px",
+                md: "0px 0px 0px 20px",
+                lg: "0px 0px 0px 0px",
+                xl: "0px 0px 0px 0px",
+              },
             }}
           >
             <Typography sx={{ color: "white", p: "10px 0px 10px 0px" }}>
